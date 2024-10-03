@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-icon class="logo-icon">dashboard</mat-icon>
+  <span class="app-name">Nimbus</span>
+
+  <span class="spacer"></span> <!-- Espaciador para alinear a la derecha -->
+
+  <button mat-icon-button aria-label="Notifications">
+    <mat-icon>notifications</mat-icon>
+  </button>
+
+  <button mat-fab aria-label="Example icon button with a delete icon"
+          [routerLink] = "['/tasks']">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <button mat-icon-button aria-label="Settings">
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <button mat-icon-button aria-label="Account">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>

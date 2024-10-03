@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <ul>
+    <li *ngFor="let item of menuItems"
+        (mouseenter)="hover = item.name"
+        (mouseleave)="hover = ''"
+        [ngClass]="{'hover': hover === item.name}">
+      <a [routerLink]="item.route">{{ item.name }}</a>
+    </li>
+  </ul>
+</div>

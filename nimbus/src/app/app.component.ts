@@ -8,13 +8,14 @@ import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
 import {SidebarComponent} from "./shared/components/sidebar/sidebar.component";
 import {HeaderComponent} from "./shared/components/header/header.component";
 import {LoginComponent} from "./features/authentication/login/login.component";
-import {SignupComponent} from "./features/users/signup/signup.component";
+import {SignupComponent} from "./features/authentication/signup/signup.component";
+import {TasksComponent} from "./features/tasks/tasks.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatSidenavContainer, MatNavList, MatToolbar, MatIcon, MatMenuTrigger, MatMenu, SidebarComponent, HeaderComponent, LoginComponent, SignupComponent],
+  imports: [RouterOutlet, MatSidenavContainer, MatNavList, MatToolbar, MatIcon, MatMenuTrigger, MatMenu, SidebarComponent, HeaderComponent, LoginComponent, SignupComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
