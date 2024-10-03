@@ -1,0 +1,46 @@
+
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title class="title">Log in</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="frmLogin" (ngSubmit)="onSubmit()" class="login-form">
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter your email</mat-label>
+          <input matInput type="email"
+                 formControlName ="email"
+                 />
+            <mat-error *ngIf="frmLogin.get('email')?.hasError('required')">Email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide() ? 'password' : 'text'"
+                 formControlName = "password">
+          <mat-error *ngIf="frmLogin.get('password')?.hasError('required')">Password is required</mat-error>
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="clickEvent($event)"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide()"
+          >
+            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="submit"
+                [disabled]="frmLogin.invalid"
+                class="full-width">Iniciar Sesión</button>
+      </form>
+      <div class="links">
+        <a href="#" (click)="onRecoverPassword()">¿Olvidaste tu contraseña?</a>
+        <a routerLink="/signup">Registrar nuevo cliente</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="isLoading" class="loading-spinner">
+  <mat-spinner></mat-spinner>
+</div>
